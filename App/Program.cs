@@ -1,4 +1,5 @@
 using app.Data;
+using app.Logs;
 using app.Repository;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,6 +22,7 @@ builder.Services.AddCors(options =>
 
 if (connection != null)
 {
+  Console.WriteLine(connection);
   builder.Services.AddDbContext<AppDbContext>(options => options.UseMySQL(connection));
   builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 }
@@ -39,6 +41,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseRouting();
-
+app.UseMiddleware<Loggin>();
 app.MapControllers();
 app.Run();

@@ -2,7 +2,6 @@ using app.Model;
 using app.Repository;
 using app.Services;
 using Microsoft.AspNetCore.Mvc;
-using MySql.Data.MySqlClient;
 
 namespace app.controller;
 
