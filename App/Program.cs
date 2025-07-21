@@ -22,13 +22,12 @@ builder.Services.AddCors(options =>
 
 if (connection != null)
 {
-  Console.WriteLine(connection);
   builder.Services.AddDbContext<AppDbContext>(options => options.UseMySQL(connection));
   builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 }
 else
 {
-  Console.WriteLine("connection fail");
+  Console.WriteLine("DB connection fail or connection string is null");
 }
 var app = builder.Build();
 

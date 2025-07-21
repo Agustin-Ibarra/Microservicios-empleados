@@ -11,6 +11,28 @@ Este microservicio recibe un archivo con información de los nuevos empleados co
 ## Características
 - Implementación de variables de entorno para el acceso a los servicios y otros usos
 - Lectura y procesamiento de archivos incluyendo validación de datos y, generador de reportes por solicitud
+Ejemplo de reporte generado
+```json
+  {
+    "totalRows":42,
+    "totalErrors":3,
+    "errorsList":
+    [
+      {
+        "row":2,
+        "messageError":"El email: dpeartree0samsung.com no es valido"
+      },
+      {
+        "row":13,
+        "messageError":"la propiedad help desks no esta en un formato valido"
+      },
+      {
+        "row":14,
+        "messageError":"El numero de telefono 1494324315A#!* no tiene una longitud de 10 numeros, o no esta un formato valido, o contiene caracteres invalidos"
+      }
+    ]
+  }
+```
 ## BackEnd
 - Tecnologías utilizadas: C# .NET Core ASP.NET dotnet 
 ```
@@ -45,6 +67,14 @@ dotnet test
 ```
 ## Monitoreo de rutas
 - Monitoreo: se realiza mediante un middleware y la implementación de la clase que contiene la lógica para crear logs personalizados
+Ejemplo de salida de logs
+```javascript
+  info: app.Logs.Loggin[0]
+      GET /api/item code 200 in 855ms ip address 153.151.222.39
+
+  warn: app.Logs.Loggin[0]
+      GET /api/itema code 404 in 1ms ip address 153.151.222.39
+```
 ## Inicio
 - Inicio de la aplicación: una vez clonado el repositorio se debe escribir el siguiente comando en la terminal
 ```bash

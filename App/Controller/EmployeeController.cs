@@ -7,18 +7,18 @@ namespace app.controller;
 
 [ApiController]
 [Route("api/[controller]")]
-public class ItemController : ControllerBase
+public class EmployeeController : ControllerBase
 {
   private readonly IEmployeeRepository _employeeRepository;
-  public ItemController(IEmployeeRepository employeeRepository)
+  public EmployeeController(IEmployeeRepository employeeRepository)
   {
     _employeeRepository = employeeRepository;
   }
 
   [HttpPost]
-  public async Task<ActionResult> GetEmployees(IFormFile itemsCsv)
+  public async Task<ActionResult> GetEmployees(IFormFile employeeCsv)
   {
-    var stream = itemsCsv.OpenReadStream();
+    var stream = employeeCsv.OpenReadStream();
     var reader = new StreamReader(stream);
     var content = reader.ReadToEnd();
     string[] rows = content.Split("\n"); // las filas se obtienen separando el archivo por cada salto de linea

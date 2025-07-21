@@ -27,12 +27,12 @@ public class FileService
       }
       catch (FormatException)
       {
-        throw new Exception(message: $"El numero de telefono {phoneString} no esta un formato adecuado o contiene caracteres erroneos");
+        throw new Exception(message: $"El numero de telefono {phoneString} no esta un formato adecuado o contiene caracteres invalidos");
       }
     }
     else
     {
-      throw new Exception(message: $"El numero de telefono {phoneString} no tiene una longitud adecuada");
+      throw new Exception(message: $"El numero de telefono {phoneString} no tiene una longitud de 10 numeros, o no esta un formato valido, o contiene caracteres invalidos");
     }
   }
 
@@ -41,7 +41,7 @@ public class FileService
     bool validMail = new EmailAddressAttribute().IsValid(email);
     if (validMail == false)
     {
-      throw new Exception(message: "El email no es valido");
+      throw new Exception(message: $"El email: {email} no es valido");
     }
   }
 
