@@ -3,16 +3,17 @@
 Este microservicio recibe un archivo con información de los nuevos empleados contratados. Procesa el archivo, analiza los datos y prepara la información para su ingreso en la base de datos de la empresa. Al finalizar, genera un resumen del proceso, donde incluye, cantidad total de registros leídos, cantidad de errores ocurridos, y un listado detallado de los errores, en caso de que se hayan producido.
 ## Tabla de contenido
 1. [Características](#características)
-3. [BackEnd](#backEnd)
-4. [Base de datos](#base-de-datos)
-5. [Documentacion](#documentacion)
-6. [Pruebas unitarias](#pruebas-unitarias)
-7. [Monitoreo de rutas](#monitoreo-de-rutas)
+2. [BackEnd](#backend)
+3. [Base de datos](#base-de-datos)
+4. [Documentacion](#documentacion)
+5. [Pruebas unitarias](#pruebas-unitarias)
+6. [Monitoreo de rutas](#monitoreo-de-rutas)
 ## Características
 - Implementación de variables de entorno para el acceso a los servicios y otros usos
 - Lectura y procesamiento de archivos incluyendo validación de datos y, generador de reportes por solicitud
+  
 Ejemplo de reporte generado
-```json
+```javascript
   {
     "totalRows":42,
     "totalErrors":3,
@@ -67,6 +68,7 @@ dotnet test
 ```
 ## Monitoreo de rutas
 - Monitoreo: se realiza mediante un middleware y la implementación de la clase que contiene la lógica para crear logs personalizados
+  
 Ejemplo de salida de logs
 ```javascript
   info: app.Logs.Loggin[0]
@@ -78,5 +80,5 @@ Ejemplo de salida de logs
 ## Inicio
 - Inicio de la aplicación: una vez clonado el repositorio se debe escribir el siguiente comando en la terminal
 ```bash
-dotnet run
+dotnet test
 ```
