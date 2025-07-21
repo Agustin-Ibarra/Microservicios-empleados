@@ -80,5 +80,5 @@ Ejemplo de salida de logs
 ## Inicio
 - Inicio de la aplicación: una vez clonado el repositorio se debe escribir el siguiente comando en la terminal
 ```bash
-dotnet test
+dotnet run
 ```
