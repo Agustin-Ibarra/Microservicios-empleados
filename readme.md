@@ -56,12 +56,11 @@ La persistencia de información se realiza a través de una base de datos relaci
 - Enlace: documentación disponible en [docs](http://localhost:5297/swagger)
 ## Pruebas unitarias
 - Librerias: las pruebas unitarias estan creadas con la libreria de Xunit y Mock
-<!-- ```
+```
 Tests/
 │
-├── CartControllerTests.cs   # test del controlador que de procesa las peticiones del carrito de compras
-├── ShopControllerTasts.cs   # test del controlador que porecesa las solicitudes de la seccion shop
-``` -->
+├── EmployeeControllerTest.cs   # test del controlador que de procesa el archivo y lo prepara, para crear nuevos regisstros en la base de datos
+```
 - Iniciar test: con el siguiente comando ejecuta las pruebas unitarias
 ```bash
 dotnet test
