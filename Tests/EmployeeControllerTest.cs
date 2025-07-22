@@ -32,6 +32,8 @@ public class EmployeeControllerTest
 		var request = await controller.GetEmployees(employeesCsv);
 		// Assert
 		var response = Assert.IsType<OkObjectResult>(request);
+		var objectResponse = Assert.IsType<ErrorModel>(response.Value);
 		Assert.Equal(200, response.StatusCode);
+		Assert.Equal(0, objectResponse.TotalErrors);
 	}
 }

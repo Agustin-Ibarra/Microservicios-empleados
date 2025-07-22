@@ -22,7 +22,7 @@ public class EmployeeController : ControllerBase
     var reader = new StreamReader(stream);
     var content = reader.ReadToEnd();
     string[] rows = content.Split("\n"); // las filas se obtienen separando el archivo por cada salto de linea
-    List<ErrorModel> errors = [];
+    List<DetailErrorModel> errors = [];
     for (int i = 0; i < rows.Length; i++)
     {
       if (i > 0 && rows[i] != "") // en el indece 0 los valore representan las cabeceras
@@ -46,7 +46,7 @@ public class EmployeeController : ControllerBase
         }
         catch (Exception ex)
         {
-          var error = new ErrorModel
+          var error = new DetailErrorModel
           {
             Row = index,
             MessageError = ex.Message
@@ -69,7 +69,7 @@ public class EmployeeController : ControllerBase
           }
           catch (Exception ex)
           {
-            var error = new ErrorModel
+            var error = new DetailErrorModel
             {
               MessageError = ex.Message,
               Row = index
@@ -79,6 +79,6 @@ public class EmployeeController : ControllerBase
         }
       }
     }
-    return Ok(new { totalRows = rows.Length, totalErrors = errors.Count, errorsList = errors });
+    return Ok(new ErrorModel {TotalRows = rows.Length,TotalErrors = errors.Count, ErrorsList = errors});
   }
 }
