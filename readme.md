@@ -8,6 +8,7 @@ Este microservicio recibe un archivo con información de los nuevos empleados co
 4. [Documentacion](#documentacion)
 5. [Pruebas unitarias](#pruebas-unitarias)
 6. [Monitoreo de rutas](#monitoreo-de-rutas)
+7. [Inicio](#inicio)
 ## Características
 - Implementación de variables de entorno para el acceso a los servicios y otros usos
 - Lectura y procesamiento de archivos incluyendo validación de datos y, generador de reportes por solicitud
@@ -25,7 +26,7 @@ Ejemplo de reporte generado
       },
       {
         "row":13,
-        "messageError":"la propiedad help desks no esta en un formato valido"
+        "messageError":"la propiedad help deskS no esta en un formato valido"
       },
       {
         "row":14,
@@ -59,7 +60,7 @@ La persistencia de información se realiza a través de una base de datos relaci
 ```
 Tests/
 │
-├── EmployeeControllerTest.cs   # test del controlador que de procesa el archivo y lo prepara, para crear nuevos regisstros en la base de datos
+├── EmployeeControllerTest.cs   # test del controlador que de procesa el archivo y lo prepara, para crear nuevos registros en la base de datos
 ```
 - Iniciar test: con el siguiente comando ejecuta las pruebas unitarias
 ```bash
