@@ -14,7 +14,7 @@ Este microservicio recibe un archivo con información de los nuevos empleados co
 - Lectura y procesamiento de archivos incluyendo validación de datos y, generador de reportes por solicitud
   
 Ejemplo de reporte generado
-```javascript
+```json
   {
     "totalRows":42,
     "totalErrors":3,
