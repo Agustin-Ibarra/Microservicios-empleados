@@ -2,11 +2,13 @@ using app.Model;
 using app.Repository;
 using app.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace app.controller;
 
 [ApiController]
 [Route("api/[controller]")]
+[EnableRateLimiting("fixedWindows")]
 public class EmployeeController : ControllerBase
 {
   private readonly IEmployeeRepository _employeeRepository;
