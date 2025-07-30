@@ -1,10 +1,8 @@
-using Microsoft.AspNetCore.RateLimiting;
 using System.Threading.RateLimiting;
 using app.Data;
 using app.Logs;
 using app.Repository;
 using Microsoft.EntityFrameworkCore;
-using Google.Protobuf.WellKnownTypes;
 
 var builder = WebApplication.CreateBuilder(args);
 var connection = Environment.GetEnvironmentVariable("DB_CONNECTION");
