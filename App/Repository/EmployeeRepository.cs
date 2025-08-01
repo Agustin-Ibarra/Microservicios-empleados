@@ -25,8 +25,7 @@ public class EmployeeRepository : IEmployeeRepository
     }
     catch (DbUpdateException)
     {
-      throw new Exception(message: $"El email {employee.Email} ya esta registrado");
+      throw new Exception(message: $"El email {employee.email} ya esta registrado");
     }
   }
-
 }

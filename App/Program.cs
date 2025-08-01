@@ -10,7 +10,6 @@ using Microsoft.IdentityModel.Tokens;
 var builder = WebApplication.CreateBuilder(args);
 var connection = Environment.GetEnvironmentVariable("DB_CONNECTION");
 var secret = Environment.GetEnvironmentVariable("JWT_SECRET");
-Console.WriteLine(secret);
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddControllers();
@@ -49,19 +48,6 @@ if (secret != null)
       ValidateIssuer = false,
       ValidateAudience = false
     };
-    options.Events = new JwtBearerEvents
-    {
-      OnAuthenticationFailed = context =>
-      {
-        Console.WriteLine($"[JWT ERROR] {context.Exception.Message}");
-        return Task.CompletedTask;
-      },
-      OnTokenValidated = context =>
-      {
-        Console.WriteLine($"[JWT OK] token valid");
-        return Task.CompletedTask;
-      }
-    };
   });
 }
 else{
@@ -69,7 +55,7 @@ else{
 }
 if (connection != null)
 {
-  builder.Services.AddDbContext<AppDbContext>(options => options.UseMySQL(connection));
+  builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connection));
   builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 }
 else

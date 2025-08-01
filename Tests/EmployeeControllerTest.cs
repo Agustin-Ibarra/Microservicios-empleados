@@ -14,7 +14,7 @@ public class EmployeeControllerTest
 	public async Task EmployeeController_RetunrOk()
 	{
 		// Averrage
-		var employee = new EmployeeModel { Email = "dpeartree0@samsung.com", First_name = "David", Last_name = "Johnson" };
+		var employee = new EmployeeModel { email = "dpeartree0@samsung.com", first_name = "David", last_name = "Johnson" };
 		var employeeRepositoryMock = new Mock<IEmployeeRepository>();
 		string rows = "first_name,last_name,email,phone,job_title\nDavid,Johnson,dpeartree0@samsung.com,401-185-8391,Frontend Developer";
 		var stream = new MemoryStream(Encoding.UTF8.GetBytes(rows));
@@ -22,9 +22,9 @@ public class EmployeeControllerTest
 		employeeRepositoryMock
 		.Setup(employee => employee.CreateEmployee(new EmployeeModel
 		{
-			Email = "employeeTestgmail.com",
-			First_name = "First name",
-			Last_name = "Last name"
+			email = "employeeTestgmail.com",
+			first_name = "First name",
+			last_name = "Last name"
 		}));
 
 		var controller = new EmployeeController(employeeRepositoryMock.Object);

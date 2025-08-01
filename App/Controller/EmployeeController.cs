@@ -61,11 +61,11 @@ public class EmployeeController : ControllerBase
         {
           var employee = new EmployeeModel
           {
-            First_name = firstName,
-            Last_name = lastName,
-            Email = email,
+            first_name = firstName,
+            last_name = lastName,
+            email = email,
             id_job = idJob,
-            Phone = phoneNumber
+            phone = phoneNumber
           };
           try
           {
