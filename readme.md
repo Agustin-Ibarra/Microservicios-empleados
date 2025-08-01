@@ -53,7 +53,7 @@ App/
 ## Base de datos
 La persistencia de información se realiza a través de una base de datos relacional, el BackEnd utiliza Entity Framework para la interacción con la base de datos, a través de un ORM
 - Base de datos relacional
-- Gestor de base de datos: MySql
+- Gestor de base de datos: SQL server
 ## Documentacion
 - Documentación de APIs: la documentación de los endpoint y APIs esta creada con Swagger Open.io
 - Enlace: documentación disponible en [docs](http://localhost:5297/swagger)
