@@ -13,7 +13,7 @@ Este microservicio recibe un archivo con información de los nuevos empleados co
 - Implementación de variables de entorno para el acceso a los servicios y otros usos
 - Lectura y procesamiento de archivos incluyendo validación de datos y, generador de reportes por solicitud
 - Registros de Logs con implementación de patrón Rate limit, para monitorear la actividad en el sistema y, limitar la cantidad de solicitudes para prevenir sobrecarga en el servidor
-- Autenticación mediante tokens de formato JWT, para proteger la comunicación entre servicios
+- Autenticación mediante tokens con formato JWT, para proteger la comunicación entre servicios
   
 Ejemplo de reporte generado
 ```json
