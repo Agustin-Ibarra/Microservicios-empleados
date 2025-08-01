@@ -3,3 +3,4 @@ properties/
 obj/
 appsettings.Development.json
 app.http
+*.txt

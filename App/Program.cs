@@ -1,11 +1,16 @@
+using System.Text;
 using System.Threading.RateLimiting;
 using app.Data;
 using app.Logs;
 using app.Repository;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 var connection = Environment.GetEnvironmentVariable("DB_CONNECTION");
+var secret = Environment.GetEnvironmentVariable("JWT_SECRET");
+Console.WriteLine(secret);
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddControllers();
@@ -33,7 +38,35 @@ builder.Services.AddCors(options =>
     .AllowAnyMethod();
   });
 });
-
+if (secret != null)
+{
+  builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+  {
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+      ValidateIssuerSigningKey = true,
+      IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secret)),
+      ValidateIssuer = false,
+      ValidateAudience = false
+    };
+    options.Events = new JwtBearerEvents
+    {
+      OnAuthenticationFailed = context =>
+      {
+        Console.WriteLine($"[JWT ERROR] {context.Exception.Message}");
+        return Task.CompletedTask;
+      },
+      OnTokenValidated = context =>
+      {
+        Console.WriteLine($"[JWT OK] token valid");
+        return Task.CompletedTask;
+      }
+    };
+  });
+}
+else{
+  throw new Exception(message : "jwt secret key is null");
+}
 if (connection != null)
 {
   builder.Services.AddDbContext<AppDbContext>(options => options.UseMySQL(connection));
@@ -41,7 +74,7 @@ if (connection != null)
 }
 else
 {
-  Console.WriteLine("DB connection fail or connection string is null");
+  throw new Exception(message : "DB connection fail or connection string is null");
 }
 var app = builder.Build();
 
@@ -56,5 +89,7 @@ app.UseHttpsRedirection();
 app.UseRouting();
 app.UseMiddleware<Loggin>();
 app.UseRateLimiter();
+app.UseAuthentication();
+app.UseAuthorization();
 app.MapControllers();
 app.Run();

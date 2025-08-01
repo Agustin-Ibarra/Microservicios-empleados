@@ -1,6 +1,7 @@
 using app.Model;
 using app.Repository;
 using app.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
 
@@ -17,6 +18,7 @@ public class EmployeeController : ControllerBase
     _employeeRepository = employeeRepository;
   }
 
+  [Authorize]
   [HttpPost]
   public async Task<ActionResult> GetEmployees(IFormFile employeeCsv)
   {
@@ -81,6 +83,6 @@ public class EmployeeController : ControllerBase
         }
       }
     }
-    return Ok(new ErrorModel {TotalRows = rows.Length,TotalErrors = errors.Count, ErrorsList = errors});
+    return Ok(new ErrorModel { TotalRows = rows.Length, TotalErrors = errors.Count, ErrorsList = errors });
   }
 }
