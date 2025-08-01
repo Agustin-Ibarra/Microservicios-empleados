@@ -12,6 +12,8 @@ Este microservicio recibe un archivo con información de los nuevos empleados co
 ## Características
 - Implementación de variables de entorno para el acceso a los servicios y otros usos
 - Lectura y procesamiento de archivos incluyendo validación de datos y, generador de reportes por solicitud
+- Registros de Logs con implementación de patrón Rate limit, para monitorear la actividad en el sistema y, limitar la cantidad de solicitudes para prevenir sobrecarga en el servidor
+- Autenticación mediante tokens de formato JWT, para proteger la comunicación entre servicios
   
 Ejemplo de reporte generado
 ```json
@@ -71,11 +73,12 @@ dotnet test
   
 Ejemplo de salida de logs
 ```javascript
-  info: app.Logs.Loggin[0]
-      GET /api/item code 200 in 855ms ip address 153.151.222.39
-
   warn: app.Logs.Loggin[0]
-      GET /api/itema code 404 in 1ms ip address 153.151.222.39
+      Date: 08/01/2025 13:47:33, Method: POST /api/employee, StatusCode: 401, in 100ms IP address 153.151.222.39 countRequest 1
+  info: app.Logs.Loggin[0]
+      Date: 08/01/2025 13:52:56, Method: POST /api/employee, StatusCode: 200 in 855ms IP address 153.151.222.39 countRequest 2
+  warn: app.Logs.Loggin[0]
+      Date: 08/01/2025 13:57:26, Method: POST /api/employee, StatusCode: 429, in 12ms IP address 153.151.222.39 countRequest 16
 ```
 ## Inicio
 - Inicio de la aplicación: una vez clonado el repositorio se debe escribir el siguiente comando en la terminal
