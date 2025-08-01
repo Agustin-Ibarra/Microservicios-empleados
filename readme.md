@@ -76,7 +76,7 @@ Ejemplo de salida de logs
   warn: app.Logs.Loggin[0]
       Date: 08/01/2025 13:47:33, Method: POST /api/employee, StatusCode: 401, in 100ms IP address 153.151.222.39 countRequest 1
   info: app.Logs.Loggin[0]
-      Date: 08/01/2025 13:52:56, Method: POST /api/employee, StatusCode: 200 in 855ms IP address 153.151.222.39 countRequest 2
+      Date: 08/01/2025 13:52:56, Method: POST /api/employee, StatusCode: 200, in 855ms IP address 153.151.222.39 countRequest 2
   warn: app.Logs.Loggin[0]
       Date: 08/01/2025 13:57:26, Method: POST /api/employee, StatusCode: 429, in 12ms IP address 153.151.222.39 countRequest 16
 ```
