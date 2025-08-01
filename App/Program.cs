@@ -19,12 +19,13 @@ builder.Services.AddRateLimiter(options =>
     partitionKey: context.Connection.RemoteIpAddress?.ToString() ?? "unknown ip",
     factory: key => new FixedWindowRateLimiterOptions
     {
-      PermitLimit = 60,
+      PermitLimit = 5,
       Window = TimeSpan.FromSeconds(60),
       QueueProcessingOrder = QueueProcessingOrder.OldestFirst,
       QueueLimit = 0
     }
   ));
+  options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
 });
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
