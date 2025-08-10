@@ -9,11 +9,13 @@ Este microservicio recibe un archivo con información de los nuevos empleados co
 5. [Pruebas unitarias](#pruebas-unitarias)
 6. [Monitoreo de rutas](#monitoreo-de-rutas)
 7. [Inicio](#inicio)
+8. [Contenedores Docker](#contenedores-docker)
 ## Características
 - Implementación de variables de entorno para el acceso a los servicios y otros usos
 - Lectura y procesamiento de archivos incluyendo validación de datos y, generador de reportes por solicitud
 - Registros de Logs con implementación de patrón Rate limit, para monitorear la actividad en el sistema y, limitar la cantidad de solicitudes para prevenir sobrecarga en el servidor
 - Autenticación mediante tokens con formato JWT, para proteger la comunicación entre servicios
+- Contenedores docker para el empaquetar y almacenar la aplicación
   
 Ejemplo de reporte generado
 ```json
@@ -84,4 +86,15 @@ Ejemplo de salida de logs
 - Inicio de la aplicación: una vez clonado el repositorio se debe escribir el siguiente comando en la terminal
 ```bash
 dotnet run
+```
+## Conetnedores Docker
+- Implementación de contenedores docker para poder almacenar la aplicación, con sus dependencias, de esta forma puede ser ejecutada en multiple entornos, facilitando mantenimiento y escalabilidad en entornos colaborativos
+
+Script para crear las imagenes de .NET core .NET SDK y SQL server
+```javascript
+  docker compose build  
+```
+Script para crear el contenedor
+```javascript
+  docker compose up
 ```
