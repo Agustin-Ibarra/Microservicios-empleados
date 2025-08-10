@@ -2,7 +2,7 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /source 
 
-# copiar el archivo a /source/application_docker
+# copiar el archivo a /source/App
 COPY ["App/app.csproj","App/"]
 # restaurar los paquetes nuget usando csproj
 RUN dotnet restore "App/app.csproj"
