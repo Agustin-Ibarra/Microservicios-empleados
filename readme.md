@@ -87,10 +87,10 @@ Ejemplo de salida de logs
 ```bash
 dotnet run
 ```
-## Conetnedores Docker
+## Contenedores Docker
 - Implementación de contenedores docker para poder almacenar la aplicación, con sus dependencias, de esta forma puede ser ejecutada en multiple entornos, facilitando mantenimiento y escalabilidad en entornos colaborativos
 
-Script para crear las imagenes de .NET core .NET SDK y SQL server
+Script para obtener las imagenes de .NET core .NET SDK y SQL server
 ```javascript
   docker compose build  
 ```
