@@ -1,11 +1,11 @@
-using app.Model;
-using app.Repository;
-using app.Services;
+using MicroserviceEmployee.Api.Model;
+using MicroserviceEmployee.Api.Repository;
+using MicroserviceEmployee.Api.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
 
-namespace app.controller;
+namespace MicroserviceEmployee.Api.controller;
 
 [ApiController]
 [Route("api/[controller]")]

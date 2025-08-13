@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace app.Model;
+namespace MicroserviceEmployee.Api.Model;
 
 public class EmployeeModel
 {

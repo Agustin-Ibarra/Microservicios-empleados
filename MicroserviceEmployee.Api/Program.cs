@@ -1,8 +1,8 @@
 using System.Text;
 using System.Threading.RateLimiting;
-using app.Data;
-using app.Logs;
-using app.Repository;
+using MicroserviceEmployee.Api.Data;
+using MicroserviceEmployee.Api.Logs;
+using MicroserviceEmployee.Api.Repository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;

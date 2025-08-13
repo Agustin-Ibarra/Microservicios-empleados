@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\app\app.csproj" />
+    <ProjectReference Include="..\MicroserviceEmployee.Api\MicroserviceEmployee.Api.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,8 +1,8 @@
-using app.Data;
-using app.Model;
+using MicroserviceEmployee.Api.Data;
+using MicroserviceEmployee.Api.Model;
 using Microsoft.EntityFrameworkCore;
 
-namespace app.Repository;
+namespace MicroserviceEmployee.Api.Repository;
 
 public interface IEmployeeRepository
 {

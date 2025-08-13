@@ -1,7 +1,7 @@
 using System.Collections.Concurrent;
 using System.Diagnostics;
 
-namespace app.Logs;
+namespace MicroserviceEmployee.Api.Logs;
 
 public class Loggin
 {

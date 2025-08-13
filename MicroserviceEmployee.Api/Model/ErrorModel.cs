@@ -1,4 +1,4 @@
-namespace app.Model;
+namespace MicroserviceEmployee.Api.Model;
 
 public class DetailErrorModel
 {

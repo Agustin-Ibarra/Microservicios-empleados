@@ -2,9 +2,9 @@
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "app", "App\app.csproj", "{6C0F928A-B28D-D207-D239-598F22CCD0B7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroserviceEmployee.Api", "MicroserviceEmployee.Api\MicroserviceEmployee.Api.csproj", "{6C0F928A-B28D-D207-D239-598F22CCD0B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{F603D92E-576D-4BB6-A570-15C0FF2B3970}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroserviceEmployee.Test", "MicroserviceEmployee.Test\MicroserviceEmployee.Test.csproj", "{F603D92E-576D-4BB6-A570-15C0FF2B3970}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,7 +1,7 @@
-using app.Model;
+using MicroserviceEmployee.Api.Model;
 using Microsoft.EntityFrameworkCore;
 
-namespace app.Data;
+namespace MicroserviceEmployee.Api.Data;
 
 public class AppDbContext : DbContext
 {
